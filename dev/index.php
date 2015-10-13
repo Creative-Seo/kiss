@@ -29,42 +29,103 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="javascript:void(0);bs-example-navbar-collapse-1">
-            <span class="sr-only">Расскрыющаяся навигацая</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-      <a class="navbar-brand" href="javascript:void(0);"><img src="/img/brand.jpg" alt="kiss"></a>
-    </div>
+<header class="header">
+	<div class="home-fon"></div>
+	<ul class="nav nav-tabs nav-justified">
+		<li><a href="javascript:void(0);"><img src="/img/logo-header.png" class="header-logo" alt="kiss logo"></a></li>
+		<li><a href="javascript:void(0);">Частным клиентам</a></li>
+		<li><a href="javascript:void(0);">Организациям</a></li>
+		<li><a href="javascript:void(0);">Частному сектору</a></li>
+		<li><a href="tel:+74923264809">(49232) 64-809</a></li>
+		<li><button type="button" class="navbar-toggle" id="menu-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button></li>
+	</ul>
+</header>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="javascript:void(0);">Ссылка</a></li>
-        <li><a href="javascript:void(0);">Ссылка</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="javascript:void(0);">Действие</a></li>
-            <li><a href="javascript:void(0);">Другое действие</a></li>
-            <li><a href="javascript:void(0);">Что-то еще</a></li>
-            <li class="divider"></li>
-            <li><a href="javascript:void(0);">Отдельная ссылка</a></li>
-            <li class="divider"></li>
-            <li><a href="javascript:void(0);">Еще одна отдельная ссылка</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<div class="home">
+	<img class="home-fon" src="/img/homepage/premium.png" alt="Фон kiss">
+	<div class="container home-block">
+		<h2 class="home-h2">Больше интернета</h2>
+		<p class="home-text">За меньшие деньги</p>
+		<img class="home-img">
+		<div class="home-btn"><a href="javascript:void(0);" class="home-href">Попробовать неделю<br>интернета бесплатно</a></div>
+	</div>
+</div>
 
-<footer>
+<div class="tarif">
+	<img class="tarif-fon" src="/img/homepage/tarif1.png" alt="Фон kiss">
+	<div class="container">
+<?php $tarif=json_decode('[
+	{"url":"","img":"","h2":"Тариф стартовый","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"},
+	{"url":"","img":"","h2":"Тариф второй","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"},
+	{"url":"","img":"","h2":"Тариф третий","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"},
+	{"url":"","img":"","h2":"Тариф четвертый","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"}
+]',true);
+foreach ($tarif as $row) { ?>
+		<div class="tarif-block">
+			<img src="<?php echo $row['img'];?>" alt="<?php echo $row['text'];?>">
+			<p><?php echo $row['text'];?></p>
+		</div>
+		<div class="slider">
+			<div class="slider-btn"></div>
+			<div class="slider-left"></div>
+			<div class="slider-right"></div>
+		</div>
+<?php } ?>
+	</div>
+</div>
 
+<div class="premium">
+	<img class="premium-fon" src="/img/homepage/premium.png" alt="Фон kiss">
+	<div class="container"><div class="row">
+<?php $premium=json_decode('[
+	{"img":"","text":"Стабильная работа"},
+	{"img":"","text":"Круглосуточная тех. поддержка"},
+	{"img":"","text":"С нами легко и удобно связаться VK, OK, MAIL, FB и т.д."},
+	{"img":"","text":"Чистый монтаж"},
+	{"img":"","text":"Подключение интернета в день обращения"},
+	{"img":"","text":"Уже более 6000 абонентов"}
+]',true);
+foreach ($premium as $row) { ?>
+		<div class="col-md-4 text-center">
+			<img src="<?php echo $row['img'];?>" alt="<?php echo $row['text'];?>" class="premium-img">
+			<p class="premium-text"><?php echo $row['text'];?></p>
+		</div>
+<?php } ?>
+	</div></div>
+</div>
+
+<div class="about">
+	<img class="about-fon" src="/img/homepage/about.png" alt="Фон kiss">
+	<div class="container text-center">
+		<h2 class="about-h2">Добрый день.</h2>
+		<p class="about-text">Мы искренне верим, что любовь к своему делу, способна дать людям что-то большее чем просто хороший продукт.<br>Философия и жизненный опыт художника может вдохнуть в его продукт душу.<br>Человеческое лицо и душа хорошего продукта всегда будет привлекать людей к нему.</p>
+	</div>
+</div>
+
+<footer class="footer">
+	<div class="container"><div class="row">
+		<div class="col-sm-4"><p class="text-right">
+			<a href="http://creative-seo.ru" class="footer-href">Creative SEO</a>
+		</p></div>
+		<div class="col-sm-4"><p class="text-center">
+			<img src="/img/logo-footer.png" class="footer-logo" alt="kiss logo"><br>
+			<a href="tel:+74923264809">(49232) 64-809</a>
+		</p></div>
+		<div class="col-sm-4"><ul class="list-unstyled">
+		  	<li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-vk fa-stack-1x"></i></a></li>
+		    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-odnoklassniki fa-stack-1x"></a></li>
+		    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-facebook fa-stack-1x"></a></li>
+		    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-google-plus fa-stack-1x"></a></li>
+  		</ul></div>
+		<div class="col-sm-12"><p class="text-center">
+			2015
+		</p></div>
+	</div></div>
 </footer>
 
 <!-- build:remove -->

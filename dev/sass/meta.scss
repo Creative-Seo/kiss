@@ -1,2 +1,44 @@
-@import "header-variables";
+@import "variables";
 @import "header-bootstrap";
+
+body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+.header{
+	position: absolute;
+	min-height: 15vh;
+	width: 100%;
+	text-transform: uppercase;
+	&-fon{
+		@include fon();
+	}
+}
+.home{
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	text-transform: uppercase;
+	&-fon{
+		@include fon();
+	}
+	&-block{
+		position: relative;
+		top:20vh;
+		text-align: center;
+	}
+	&-btn{
+		background-color: #fc0;
+		display: inline-block;
+		padding: 5px;
+	}
+	&-href{
+		color: #fff;
+		text-decoration: none;
+		&:hover, &:focus{
+			color: #aaa;
+			text-decoration: none;			
+		}
+	}
+}

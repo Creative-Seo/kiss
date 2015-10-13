@@ -2,3 +2,10 @@ $font-body-roboto-cons:'Roboto Condensed', sans-serif;
 $font-body-open-sans:'Open Sans', sans-serif;
 $font-weight-body:400;
 $font-size-body:16px;
+
+@mixin fon(){
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+}

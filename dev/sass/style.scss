@@ -1,2 +1,37 @@
 @import "variables";
 @import "bootstrap";
+
+.tarif{
+	position: relative;
+	overflow-y: hidden;
+	min-height: 85vh;
+	width: 100%;
+	&-fon{
+		@include fon();
+	}
+}
+.premium{
+	position: relative;
+	overflow-y: hidden;
+	min-height: 85vh;
+	width: 100%;
+	&-fon{
+		@include fon();
+	}
+}
+.about{
+	position: relative;
+	overflow-y: hidden;
+	min-height: 85vh;
+	width: 100%;
+	&-fon{
+		@include fon();
+	}
+}
+.footer{
+	min-height: 15vh;
+	width: 100%;
+	&-fon{
+		@include fon();
+	}
+}
