@@ -1,0 +1,29 @@
+{
+  "name": "kiss",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-csslint": "^0.5.0",
+    "grunt-contrib-htmlmin": "latest",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "latest",
+    "grunt-critical": "latest",
+    "grunt-csso": "^0.7.1",
+    "grunt-fixmyjs": "latest",
+    "grunt-include-replace": "latest",
+    "grunt-newer": "latest",
+    "grunt-postcss": "latest",
+    "grunt-processhtml": "latest",
+    "grunt-responsive-images": "latest",
+    "grunt-sitemap": "latest",
+    "grunt-uncss": "^0.4.3",
+    "grunt-wiredep": "latest",
+    "grunt-xml-sitemap": "latest",
+    "time-grunt": "latest"
+  }
+}
