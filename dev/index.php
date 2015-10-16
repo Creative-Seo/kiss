@@ -30,19 +30,15 @@
 <body>
 
 <header class="header">
-	<div class="home-fon"></div>
-	<ul class="nav nav-tabs nav-justified">
-		<li><a href="javascript:void(0);"><img src="/img/logo-header.png" class="header-logo" alt="kiss logo"></a></li>
-		<li><a href="javascript:void(0);">Частным клиентам</a></li>
-		<li><a href="javascript:void(0);">Организациям</a></li>
-		<li><a href="javascript:void(0);">Частному сектору</a></li>
-		<li><a href="tel:+74923264809">(49232) 64-809</a></li>
-		<li><button type="button" class="navbar-toggle" id="menu-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button></li>
+	<ul class="header-nav">
+		<li class="header-item"><a href="javascript:void(0);" class="header-href"><img src="/img/logo-header.png" class="header-logo" alt="kiss logo"></a></li>
+		<li class="header-item"><a href="javascript:void(0);" class="header-href">Частным клиентам</a></li>
+		<li class="header-item"><a href="javascript:void(0);" class="header-href">Организациям</a></li>
+		<li class="header-item"><a href="javascript:void(0);" class="header-href">Частному сектору</a></li>
+		<li class="header-item"><a href="tel:+74923264809" class="header-href">(49232) 64-809</a></li>
+		<li class="header-item"><a href="javascript:void(0);" class="header-href trigger">
+			<span class="trigger-bar"></span>
+		</a></li>
 	</ul>
 </header>
 
@@ -56,43 +52,48 @@
 	</div>
 </div>
 
-<div class="tarif">
-	<img class="tarif-fon" src="/img/homepage/tarif1.png" alt="Фон kiss">
-	<div class="container">
+<div id="tarif" class="tarif">
+	<img id="tarif-fon" class="tarif-fon" src="/img/homepage/premium.png" alt="Фон kiss">
+	<div id="tarif-anime1" class="animate"></div>
+	<div id="tarif-anime2" class="animate"></div>
+	<div id="tarif-anime3" class="animate"></div>
 <?php $tarif=json_decode('[
-	{"url":"","img":"","h2":"Тариф стартовый","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"},
-	{"url":"","img":"","h2":"Тариф второй","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"},
-	{"url":"","img":"","h2":"Тариф третий","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"},
-	{"url":"","img":"","h2":"Тариф четвертый","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","speed":"10 Мб/с","cost":"250"}
+	{"url":"javascript:void(0);","img":"tarif1","h2":"Тариф стартовый","losung":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","losung":"10 Мб/с","cost":"250"},
+	{"url":"javascript:void(0);","img":"tarif2","h2":"Тариф второй","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","losung":"50 Мб/с","cost":"500"},
+	{"url":"javascript:void(0);","img":"tarif3","h2":"Тариф третий","span":"Пора начать","text":"Тариф \"Стартовый\" повзоляет вам с полным комфортом использовать социальные сети, искать всю важную информацию, а также пользоваться электронной почтой","losung":"100 Мб/с","cost":"800"}
 ]',true);
 foreach ($tarif as $row) { ?>
-		<div class="tarif-block">
-			<img src="<?php echo $row['img'];?>" alt="<?php echo $row['text'];?>">
-			<p><?php echo $row['text'];?></p>
-		</div>
-		<div class="slider">
-			<div class="slider-btn"></div>
-			<div class="slider-left"></div>
-			<div class="slider-right"></div>
+		<div class="tarif-block" id="<?php echo $row['img'];?>">
+			<img src="/img/homepage/<?php echo $row['img'];?>.png" alt="<?php echo $row['h2'];?>" class="tarif-img">
+			<div class="tarif-bblue">
+				<h2 class="tarif-h2"><?php echo $row['h2'];?></h2>
+				<p class="tarif-losung"><?php echo $row['losung'];?></p>
+				<p class="tarif-text"><?php echo $row['text'];?></p>
+			</div>
+			<div class="tarif-btn"><a href="<?php echo $row['url'];?>" class="tarif-href">Подключить</a></div>
 		</div>
 <?php } ?>
-	</div>
+	<div class="container"><div class="slide">
+		<div class="slide-btn"></div>
+		<div class="slide-left"></div>
+		<div class="slide-right"></div>
+	</div></div>
 </div>
 
 <div class="premium">
 	<img class="premium-fon" src="/img/homepage/premium.png" alt="Фон kiss">
 	<div class="container"><div class="row">
 <?php $premium=json_decode('[
-	{"img":"","text":"Стабильная работа"},
-	{"img":"","text":"Круглосуточная тех. поддержка"},
-	{"img":"","text":"С нами легко и удобно связаться VK, OK, MAIL, FB и т.д."},
-	{"img":"","text":"Чистый монтаж"},
-	{"img":"","text":"Подключение интернета в день обращения"},
-	{"img":"","text":"Уже более 6000 абонентов"}
+	{"img":"icon1","text":"Стабильная работа"},
+	{"img":"icon2","text":"Круглосуточная тех. поддержка"},
+	{"img":"icon3","text":"С нами легко и удобно связаться VK, OK, MAIL, FB и т.д."},
+	{"img":"icon4","text":"Чистый монтаж"},
+	{"img":"icon5","text":"Подключение интернета в день обращения"},
+	{"img":"icon6","text":"Уже более 6000 абонентов"}
 ]',true);
 foreach ($premium as $row) { ?>
-		<div class="col-md-4 text-center">
-			<img src="<?php echo $row['img'];?>" alt="<?php echo $row['text'];?>" class="premium-img">
+		<div class="col-sm-4 premium-block">
+			<div class="premium-img"><img src="/img/homepage/premium-<?php echo $row['img'];?>.png" alt="<?php echo $row['text'];?>" class="img-responsive"></div>
 			<p class="premium-text"><?php echo $row['text'];?></p>
 		</div>
 <?php } ?>
@@ -109,29 +110,34 @@ foreach ($premium as $row) { ?>
 
 <footer class="footer">
 	<div class="container"><div class="row">
-		<div class="col-sm-4"><p class="text-right">
-			<a href="http://creative-seo.ru" class="footer-href">Creative SEO</a>
-		</p></div>
-		<div class="col-sm-4"><p class="text-center">
-			<img src="/img/logo-footer.png" class="footer-logo" alt="kiss logo"><br>
-			<a href="tel:+74923264809">(49232) 64-809</a>
-		</p></div>
-		<div class="col-sm-4"><ul class="list-unstyled">
-		  	<li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-vk fa-stack-1x"></i></a></li>
-		    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-odnoklassniki fa-stack-1x"></a></li>
-		    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-facebook fa-stack-1x"></a></li>
-		    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-google-plus fa-stack-1x"></a></li>
-  		</ul></div>
-		<div class="col-sm-12"><p class="text-center">
-			2015
-		</p></div>
+		<div class="col-sm-4">
+			<p class="footer-right"><a href="http://creative-seo.ru" class="footer-href">Creative SEO</a></p>
+		</div>
+		<div class="col-sm-4">
+			<p class="footer-center">
+				<img src="/img/logo-footer.png" class="footer-logo" alt="kiss logo"><br>
+				<a href="tel:+74923264809" class="footer-href">(49232) 64-809</a>
+			</p>
+			<p class="footer-center">2015</p>
+		</div>
+		<div class="col-sm-4">
+			<ul class="list-inline footer-right">
+			  	<li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-vk"></i></a></li>
+			    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-odnoklassniki"></i></a></li>
+			    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-facebook"></i></a></li>
+			    <li><a href="javascript:void(0);" class="footer-href"><i class="fa fa-google-plus"></i></a></li>
+	  		</ul>
+  		</div>
 	</div></div>
 </footer>
 
 <!-- build:remove -->
 <script src="/libs/jquery/dist/jquery.min.js"></script>
 <script src="/libs/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-<script src="/libs/mega-site-navigation/js/main.js"></script>
+<script src="/libs/gsap/src/minified/TweenMax.min.js"></script>
+<script src="/libs/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+<script src="/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
 <script src="/js/common.js"></script>
 <!-- /build -->
 
